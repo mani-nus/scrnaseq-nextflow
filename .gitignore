@@ -1,0 +1,9 @@
+*.fa.gz
+*.gtf.gz
+.nextflow.log*
+fastq
+reports
+results*
+work
+nextflow
+.nextflow
