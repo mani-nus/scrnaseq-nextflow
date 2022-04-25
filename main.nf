@@ -138,8 +138,8 @@ process kb_count {
         file index from kb_built_index.mix(kb_download_index,kb_prebuilt_index).collect()
         file t2g from kb_built_t2g.mix(kb_download_t2g,kb_prebuilt_t2g).collect()
 
-    // output:
-    //   file results 
+    output:
+    	file '*' 
 
     when:
         params.aligner == "kb"
@@ -150,7 +150,6 @@ process kb_count {
     -i ${index} \\
     -g ${t2g} \\
     -x ${params.tech} \\
-   -o ${params.outdir} \\
     -t 8 \\
     --filter bustools \\
     ${reads}
