@@ -132,7 +132,6 @@ process kb_count {
     label "high_memory"
     tag "${params.tech}"
     publishDir params.outdir, mode: "copy"
-    cpus 8
 
     input:
         file reads from read_files_kb.collect()
