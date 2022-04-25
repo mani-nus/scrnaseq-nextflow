@@ -89,6 +89,7 @@ params.tech = params.type + params.chemistry
 
 process kb_build_index {
     label params.aligner
+    label "mid_memory"
     publishDir params.kb_ref_files, mode: "copy"
     
     input:
@@ -110,6 +111,7 @@ process kb_build_index {
 
 process kb_download_ref {
     label params.aligner
+    label "low_memory"
     publishDir params.kb_ref_files, mode: "copy"
 
     output:
@@ -127,6 +129,7 @@ process kb_download_ref {
 
 process kb_count {
     label params.aligner
+    label "high_memory"
     tag "${params.tech}"
     publishDir params.outdir, mode: "copy"
     cpus 8
@@ -152,6 +155,5 @@ process kb_count {
     -t 8 \\
     --filter bustools \\
     ${reads}
-    """
-    
+    """    
 }
