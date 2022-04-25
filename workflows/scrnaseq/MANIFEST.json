@@ -1,0 +1,5 @@
+{ 
+  "mainWorkflowURL": "https://github.com/kane9530/scrnaseq-nextflow.git",
+  "inputFileURLs": ["inputs.json"]
+}
+
